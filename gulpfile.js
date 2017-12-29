@@ -26,13 +26,13 @@ gulp.task('watch', ['styles'], function () {
 });
 
 
-/********* MANUAL TASK TO RUN AT END *********/
+/********* MANUAL TASK TO RUN AT END
 gulp.task('combinemq', function () {
     gulp.src('css/styles.css')
         .pipe(gcmq())
         .pipe(gulp.dest('./css'));
 });
-/****************************************/
+*******************/
 
 
 gulp.task('default', ['watch']);
