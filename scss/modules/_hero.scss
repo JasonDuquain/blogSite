@@ -19,6 +19,9 @@
         width: 13.437em;
         height: auto;
         margin-bottom: .8em;
+        border-radius: 50%;
+        border: .8em solid rgba(255,255,255,.5);
+        display: block;  
     }
     
     &__title {
