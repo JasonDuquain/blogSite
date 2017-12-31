@@ -1,0 +1,223 @@
+
+.main__column-two {
+    color: darken($silver, 30%);
+}
+
+.author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+    
+    &__wrap-img {
+        width: 17em;
+        height: 17em;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 2em;
+        
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: rgba(255,255,255,.8);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            z-index: 99;
+            transition: transform 400ms ease-out, opacity 200ms 50ms ease-in;
+            opacity: 0;
+        }
+        
+        &::after {
+            content: "";
+            border: 1em solid rgba(255,255,255,.8);
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            transition: border-width 300ms ease-out 100ms;
+        }
+        
+        &:hover::after {
+           border-width: 0px;
+        }
+        
+         &:hover::before {
+             transform: translate(-50%, -50%) scale(1);
+             opacity: 1;
+        }
+        
+    }
+    
+    &__img {
+        height: 100%;
+        transform: translateX(-1.2em);
+        display: block;
+    }
+    
+    &__hdg {;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-bottom: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        &::after {
+            content: "";
+            display: block;
+            width: 2em;
+            height: 2px;
+            background-color: currentColor;
+            margin-top: .5em;
+            
+        }
+    }
+    
+    &__para {
+        line-height: 1.4;
+    }
+}
+
+
+/********** SEARCH  *********/
+
+.search {
+    border: 1px solid $silver;
+    padding: 1.5em;
+    margin-bottom: 3em;
+    
+    &__hdg {
+        text-transform: uppercase;
+        margin-bottom: .8em;
+        text-align: center;
+        font-weight: 500;
+    }
+    
+    &__group {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    &__input:focus, &__btn:focus {
+        outline: none;
+        box-shadow: inset 0 0 4px 0 rgba(0,0,0,.6);
+    }
+    
+    &__input {
+        font-family: inherit;
+        font-size: inherit;
+        flex: 1;
+        padding: .5em 1em;
+        border: 1px solid $silver;
+        border-right: none;
+        border-radius: 3px 0 0 3px;
+        
+    }
+    
+    &__btn {
+        flex: 0 0 3em;
+        border-radius: 0 3px 3px 0;
+        border: 1px solid $silver;
+        cursor: pointer;
+        
+        &::after {
+            font-family: FontAwesome;
+            content: "\f002";
+            display: block;
+            font-size: 1.3em;
+        }
+    }
+}
+
+/******** RECENT POSTS  *********/
+
+.recent {
+    border: 1px solid $silver;
+    padding: 1.5em;
+    margin-bottom: 3em;
+    
+    &__hdg {
+        text-transform: uppercase;
+        margin-bottom: .8em;
+        text-align: center;
+        font-weight: 500;
+    }
+    
+    &__grp {
+        font-size: .9em;
+        display: flex;
+        height: 5em;
+        margin-bottom: 2em;
+        padding-top: 2em;
+        align-items: center;
+        border-top: 1px solid $silver;
+    }
+    
+    &__grp:nth-child(odd) {
+        flex-direction: row-reverse;
+        
+        & img {
+            margin-left: 1em;
+            margin-right: 0;
+        }
+    }
+    
+    &__img {
+        width: 7em;
+        height: auto;
+        margin-right: 1em;
+    }
+    
+    &__para {
+        flex: 1;
+    }
+    
+}
+
+
+/********  TAGS   ******/
+
+.tags {
+    border: 1px solid $silver;
+    padding: 1.5em;
+    margin-bottom: 3em;
+    
+    &__hdg {
+        text-transform: uppercase;
+        margin-bottom: .8em;
+        text-align: center;
+        font-weight: 500; 
+    }
+    
+    &__grp {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    &__anch {
+        background-color: lighten($silver, 30%);
+        text-transform: uppercase;
+        color: darken($silver, 25%);
+        margin: 0 .5em .5em 0;
+        padding: .5em 1em;
+        border-radius: 2px;
+        transition: all 300ms ease-out 50ms;
+        
+        &:hover {
+            background-color: lighten($silver, 10%);
+        }
+        
+    }
+    
+}
+
