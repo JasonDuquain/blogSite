@@ -3,6 +3,22 @@
     color: darken($silver, 30%);
 }
 
+/* REPEATABLE STYLES FOR EACH WIDGET*/
+
+.widget {
+    border: 1px solid $silver;
+    padding: 1.5em;
+    margin-bottom: 3em;
+    
+    &__hdg {
+        text-transform: uppercase;
+        margin-bottom: .8em;
+        text-align: center;
+        font-weight: 500; 
+    }
+}
+
+/******   AUTHOR  **********/
 .author {
     display: flex;
     flex-direction: column;
@@ -58,12 +74,13 @@
     }
     
     &__img {
-        height: 100%;
-        transform: translateX(-1.2em);
+        width: 100%;
+        //height: 100%;
+        //transform: translateX(-1.2em);
         display: block;
     }
     
-    &__hdg {;
+    &__hdg {
         text-transform: uppercase;
         font-weight: 300;
         margin-bottom: 1em;
@@ -91,17 +108,7 @@
 /********** SEARCH  *********/
 
 .search {
-    border: 1px solid $silver;
-    padding: 1.5em;
-    margin-bottom: 3em;
-    
-    &__hdg {
-        text-transform: uppercase;
-        margin-bottom: .8em;
-        text-align: center;
-        font-weight: 500;
-    }
-    
+  
     &__group {
         display: flex;
         width: 80%;
@@ -142,16 +149,6 @@
 /******** RECENT POSTS  *********/
 
 .recent {
-    border: 1px solid $silver;
-    padding: 1.5em;
-    margin-bottom: 3em;
-    
-    &__hdg {
-        text-transform: uppercase;
-        margin-bottom: .8em;
-        text-align: center;
-        font-weight: 500;
-    }
     
     &__grp {
         font-size: .9em;
@@ -173,9 +170,11 @@
     }
     
     &__img {
-        width: 7em;
+        width: 8em;
         height: auto;
         margin-right: 1em;
+        //border: 3px solid rgba(0,0,0,.2);
+        box-shadow: .1em .1em .2em 0 rgba(0,0,0,.4);
     }
     
     &__para {
@@ -188,16 +187,6 @@
 /********  TAGS   ******/
 
 .tags {
-    border: 1px solid $silver;
-    padding: 1.5em;
-    margin-bottom: 3em;
-    
-    &__hdg {
-        text-transform: uppercase;
-        margin-bottom: .8em;
-        text-align: center;
-        font-weight: 500; 
-    }
     
     &__grp {
         display: flex;
@@ -220,4 +209,84 @@
     }
     
 }
+
+/****** ADVERTISEMENT  ********/
+
+.ad {
+
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+    
+}
+
+
+/*******  ARCHIVES  **********/
+
+.archives {
+  
+    &__list {
+       font-family: 'Playfair Display', serif; 
+    }
+    
+    &__item {
+        padding: .7em 0;
+        
+        & + & {
+            border-top: 1px solid currentColor;
+        }
+    
+        &::before {
+            font-family: FontAwesome;
+            content: "\f054";
+            display: inline-block;
+            margin-right: .3em;
+            font-size: .9em;
+            transition: transform 300ms ease-in;
+        }
+        
+    }
+    
+    &__anch {
+        color: inherit;
+        display: inline-block;
+        padding-bottom: .2em;
+        border-bottom: 1px solid transparent;
+        transition: border-bottom 300ms ease-out 50ms;
+    }
+}
+
+/********   sub menu styles for archives  *********/
+.archives__list-sub {
+    height: 0;
+    overflow: hidden;
+    padding-left: 2em;
+    transition: height 600ms ease-out;
+}
+
+.archives__item:hover::before {
+    transform: rotate(90deg);
+}
+
+.archives__item.js--expand .archives__list-sub {
+    height: auto;
+}
+
+.archives__item-sub {
+    margin: .5em 0;
+}
+
+.archives__anch-sub {
+    color: inherit;
+    padding-bottom: .1em;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 300ms ease-out;
+    
+    &:hover {
+        border-bottom: 1px solid currentColor;
+    }
+    
+}
+
 

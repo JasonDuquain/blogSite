@@ -1,4 +1,18 @@
-
+/*remove below block*/
+.just {
+    position: relative;
+    z-index: 999;
+    margin: -7em auto 0 auto;
+    
+    & .blog__social {
+        padding-top: 2em;
+    }
+    
+    & .blog__para {
+        padding: 3em 0 2em 0;
+    }
+}
+/* remove above block*/
 .main {
     padding: 7em 0;
     display: grid;

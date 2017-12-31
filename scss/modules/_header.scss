@@ -17,13 +17,12 @@
     
     &__item {
         padding: 1rem 1.4rem;
-        border-bottom: 3px solid transparent;
         transition: all 300ms ease-out;
         display: flex;
         align-items: center;
         
         &:hover {
-            border-bottom: 2px solid goldenrod;
+            box-shadow: inset 0 -3px 0 darken($silver, 25%);
         }
     }
     
@@ -47,7 +46,6 @@
         padding-left: 0;
     }
     
-    
     &__anch {
         font-family: inherit;
         color: $darkgrey;
@@ -57,6 +55,8 @@
         position: relative;
         padding: .3125em 0;
         
+        /*
+        use box-shadow on the LIs instead
         &::after {
             content: "";
             border-bottom: 0.125em solid $darkgrey;
@@ -71,7 +71,7 @@
         &:hover::after {
             transform: scaleX(1);
             
-        }
+        }*/
         
     }
     

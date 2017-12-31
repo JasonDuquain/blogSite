@@ -14,3 +14,22 @@ navAnchs.forEach((el) => {
     });
 });
 
+
+/********** SUBMENU ON HOVER FOR ARCHIVES **********/
+let listItems = document.querySelectorAll('.archives__item');
+let submenu = document.querySelectorAll('.archives__list-sub');
+
+listItems.forEach((el, i) => {
+    el.addEventListener('mouseover', function() {
+        let submenuHeight = submenu[i].scrollHeight;
+        submenu[i].style.height = submenuHeight + 'px';
+        el.classList.add('js-expand');
+    });
+});
+
+listItems.forEach((el, i) => {
+    el.addEventListener('mouseout', function() {
+       el.classList.remove('js--expand');
+        submenu[i].style.height = 0;
+    });
+});
