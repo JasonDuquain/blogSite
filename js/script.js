@@ -33,3 +33,11 @@ listItems.forEach((el, i) => {
         submenu[i].style.height = 0;
     });
 });
+
+
+
+/**********  COPYRIGHT DATE   **********/
+let currentDate =  document.querySelector('.date');
+currentDate.textContent = new Date().getFullYear();
+
+

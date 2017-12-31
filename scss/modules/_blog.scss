@@ -13,8 +13,9 @@
     }
 }
 /* remove above block*/
+
 .main {
-    padding: 7em 0;
+    padding: 7em 0 4em 0;
     display: grid;
     grid-template-columns: 2.2fr 1fr;
     grid-gap: 1.5em 4em;
@@ -149,13 +150,13 @@
     }
     
     &__more {
+        font-size: .9em;
         display: inline-block;
-        padding: calc(1em + 3px) 2em 1em 2em;
+        padding: 1em 2em;
         background-color: lighten($silver, 20%);
         text-transform: uppercase;
         color: darken($silver, 25%);
         transition: box-shadow 300ms ease-out 50ms;
-        
         
         &:hover {
             box-shadow: inset 0 -3px 0 darken($silver, 25%);
@@ -163,11 +164,60 @@
         
     }
     
+ 
+} //.blog
+
+/**********   PAGINATION   ************/
+.pagination {
     
+    &__list {
+        display: flex;
+        justify-content: center;
+    }
     
+    &__item {
+        
+        & + & {
+            margin-left: 1em;
+        }
+        
+    }
+    
+    &__anch {
+        font-size: .9em;
+        border-radius: 3px;
+        color: inherit;
+        display: block;
+        padding: .5em .6em;
+        background-color: lighten($silver, 15%);
+        transition: all 300ms ease-out 50ms;
+        
+        &:hover {
+            background-color: darken($silver, 25%);
+            color: #fff;
+        }
+    }
+    
+    &__anch--first::before {
+        font-family: FontAwesome;
+        content: "\f100"; 
+        display: inline-block;
+        margin-right: .2em;
+    }
+    
+    &__anch--last::after {
+        font-family: FontAwesome;
+        content: "\f101";
+        display: inline-block;
+        margin-left: .2em;
+    }
+    
+    &__anch--current {
+        background-color: darken($silver, 25%);
+        color: #fff;
+    }
     
     
 }
-
 
 
