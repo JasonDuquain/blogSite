@@ -1,6 +1,13 @@
 
 .main__column-two {
     color: darken($silver, 30%);
+    
+    @include breakpoint(max-width $mediumsmall) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        margin-top: 4em;
+    }
 }
 
 /* REPEATABLE STYLES FOR EACH WIDGET*/
@@ -101,7 +108,17 @@
     
     &__para {
         line-height: 1.4;
+        
+        @include breakpoint(max-width $mediumsmall) {
+            width: 80%;
+            margin: 0 auto;
+        }
     }
+    
+    @include breakpoint(max-width $mediumsmall) {
+        grid-column: 1 / -1;
+    }
+    
 }
 
 
@@ -113,6 +130,10 @@
         display: flex;
         width: 80%;
         margin: 0 auto;
+        
+        @include breakpoint(max-width $mediumsmall) {
+            width: 60%;
+        }
     }
     
     &__input:focus, &__btn:focus {
@@ -121,6 +142,7 @@
     }
     
     &__input {
+        width: 100%; /* VERY NECESSARY TO OVERIDE BROWSER DEFAULTS*/
         font-family: inherit;
         font-size: inherit;
         flex: 1;
@@ -144,6 +166,13 @@
             font-size: 1.3em;
         }
     }
+    
+    @include breakpoint(max-width $mediumsmall) {
+        width: 90%;
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+    
 }
 
 /******** RECENT POSTS  *********/
@@ -153,7 +182,6 @@
     &__grp {
         font-size: .9em;
         display: flex;
-        height: 5em;
         margin-bottom: 2em;
         padding-top: 2em;
         align-items: center;
@@ -173,7 +201,6 @@
         width: 8em;
         height: auto;
         margin-right: 1em;
-        //border: 3px solid rgba(0,0,0,.2);
         box-shadow: .1em .1em .2em 0 rgba(0,0,0,.4);
     }
     

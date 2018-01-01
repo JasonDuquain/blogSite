@@ -6,6 +6,23 @@
     max-width: $maxwidth;
     margin: 0 auto;
     padding: 0 1.5em;
+    transition: all 300ms ease-out;
+    
+    &.js--sticky {
+        position: fixed;
+        z-index: 1111;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,.6);
+        max-width: none;
+        padding: 0 calc(50% - 650px + 1.5em); //include the 1.5em padding from original hdr
+        box-shadow: 0 2px 2px #000;
+        
+        @include breakpoint (max-width $maxwidth) {
+            padding: 0 1.5em;
+        }
+    }
 }
 
 .nav {
@@ -24,6 +41,10 @@
         &:hover {
             box-shadow: inset 0 -3px 0 darken($silver, 25%);
         }
+        
+        .js--sticky &:hover {
+            box-shadow: inset 0 -3px 0 #fff;
+        }
     }
     
     &__icon {
@@ -38,6 +59,11 @@
             color: red;
             transform: scale(1.3);
         }
+        
+        .js--sticky & {
+            color: #fff;
+        }
+        
     }
     
     &__item:not(:first-of-type) {
@@ -53,9 +79,13 @@
         color: $darkgrey;
         display: block;
         text-transform: uppercase;
-        font-size: .9em;
+        font-size: .8em;
         position: relative;
         padding: .3125em 0;
+        
+        .js--sticky & {
+            color: #fff;
+        }
         
         /*
         use box-shadow on the LIs instead
@@ -89,6 +119,15 @@
         font-size: 1.5em;
         transition: color 300ms ease-out 50ms;
         padding: .6rem .4rem;
+        
+        .js--sticky & {
+            color: #fff;
+        }
+        
+        .js--sticky &:hover {
+            color: darken(#fff, 20%);
+        }
+        
     }
     
     &__anch:hover, &__focus {

@@ -4,7 +4,7 @@
     background-size: cover;
     background-position: top;
     height: 70vh;
-    border-bottom: 1.5vw solid $darkgrey;
+    border-bottom: 1.2vw solid $darkgrey;
     position: relative;
     
     &__brand {
@@ -34,7 +34,7 @@
     &__subtitle {
         text-transform: uppercase;
         font-size: 1.1em;
-        color: $silver;
+        color: darken($silver, 30%);
         font-weight: 500;
     }
 }

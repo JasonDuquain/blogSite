@@ -21,6 +21,21 @@
     grid-gap: 1.5em 4em;
     max-width: $maxwidth;
     margin: 0 auto;
+    
+    @include breakpoint(max-width 1340px) {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+    
+    @include breakpoint (max-width $large) {
+        grid-column-gap: 2em;
+    }
+    
+    @include breakpoint (max-width $mediumsmall) {
+        grid-template-columns: auto;
+        grid-column-gap: none;
+    }
+    
 }
 
 .blog {
