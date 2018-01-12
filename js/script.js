@@ -53,6 +53,7 @@ bttBtn.addEventListener('click', (e) => {
     docElement.scrollTop = 0;
 });
 
+
 /*******  STICKY HDR    **********/
 let hdr = document.querySelector('header');
 let hero = document.querySelector('.hero');
@@ -68,7 +69,25 @@ document.addEventListener('scroll', (e) => {
         hdr.classList.remove('js--sticky');
         docBody.style.setProperty('padding-top', 0);
     }
-})
+});
+
+
+/************ HAMBURGER ********  ughhhhhh  *******/
+let hamburger = document.querySelector('.hamburger');
+
+
+hamburger.addEventListener('click', function(e) {
+    hamburger.classList.toggle('js--x'); 
+    hdr.classList.toggle('js--showheader');
+    let hdrScrollHeight = hdr.scrollHeight;
+    if (hdr.classList.contains('js--showheader')) {
+        hdr.style.setProperty('height', hdrScrollHeight + 'px');
+    } else {
+        hdr.style.setProperty('height', 0);
+    }
+});
+
+
 
 /**********  COPYRIGHT DATE   **********/
 let currentDate =  document.querySelector('.date');

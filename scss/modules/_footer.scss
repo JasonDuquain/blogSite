@@ -13,6 +13,10 @@
         padding-left: 0;
         padding-right: 0;
         margin-bottom: 0;
+        
+        @include breakpoint(max-width $mediumsmall) {
+            grid-template-columns: auto;
+        }
     }
     
     &__col {
@@ -69,6 +73,12 @@
             border-bottom: 1px solid $silver;
             
         }
+        
+        @include breakpoint(max-width $mediumsmall) {
+            width: 50%;
+            margin: 0 auto;
+        }
+        
     }
     
     &__anch {
@@ -83,6 +93,11 @@
    
     &__grp {
         margin-top: auto;
+        
+        @include breakpoint(max-width $mediumsmall) {
+            width: 50%;
+            margin: 0 auto;
+        }
     }
     
     &__btn {
@@ -101,11 +116,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 2em;
-    
-    &__para {
-        
-    }
-    
+
     &__list {
         display: flex;
     }

@@ -28,7 +28,7 @@
     }
     
     @include breakpoint (max-width $large) {
-        grid-column-gap: 2em;
+        grid-column-gap: 3em;
     }
     
     @include breakpoint (max-width $mediumsmall) {
